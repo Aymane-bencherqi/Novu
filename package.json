@@ -15,7 +15,7 @@
     "build:with-ee": "pnpm build && pnpm build-ee",
     "build:worker": "nx build @novu/worker",
     "build:ws": "nx build @novu/ws",
-    "build": "nx run-many --target=build --all --exclude=nextjs,nestjs",
+    "build": "nx run-many --target=build --all --projects=@novu/api-service,@novu/worker,@novu/ws,@novu/web,@novu/webhook,@novu/js,@novu/novui,@novu/design-system,@novu/shared,@novu/dal,@novu/testing,@novu/stateless,@novu/providers,@novu/application-generic,@novu/inbound-mail",
     "clean": "rimraf **/build **/dist **/node_modules",
     "commit": "cz",
     "dev-environment-setup": "sh ./scripts/dev-environment-setup.sh",

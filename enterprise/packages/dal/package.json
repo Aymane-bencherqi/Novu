@@ -8,7 +8,7 @@
     "afterinstall": "pnpm build",
     "prebuild": "rimraf dist",
     "build": "node ./check-ee.mjs",
-    "build:esm": "cross-env node_modules/.bin/tsc -p tsconfig.build.json",
+    "build:esm": "node -e \"if (require('fs').existsSync('src')) require('cross-spawn').sync('cross-env', ['node_modules/.bin/tsc', '-p', 'tsconfig.build.json'], { stdio: 'inherit' });\"",
     "build:watch": "cross-env node_modules/.bin/tsc -p tsconfig.build.json -w --preserveWatchOutput",
     "precommit": "lint-staged",
     "test": "echo 'skip test in the ci'",

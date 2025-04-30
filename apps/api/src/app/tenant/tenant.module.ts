@@ -1,14 +1,26 @@
 import { Module } from '@nestjs/common';
-
-import { SharedModule } from '../shared/shared.module';
-import { USE_CASES } from './usecases';
 import { TenantController } from './tenant.controller';
-import { AuthModule } from '../auth/auth.module';
+import { CreateTenant, GetTenant, UpdateTenant, SoftDeleteTenant, RestoreTenant } from '@novu/application-generic';
+import { DeleteTenant } from './usecases/delete-tenant/delete-tenant.usecase';
+import { GetTenants } from './usecases/get-tenants/get-tenants.usecase';
+import { featureFlagsService } from '@novu/application-generic/dist/custom-providers';
+import { GetDeletedTenants } from './usecases/get-deleted-tenants/get-deleted-tenants.usecase';
+import { SharedModule } from '../shared/shared.module';
 
 @Module({
-  imports: [SharedModule, AuthModule],
+  imports: [SharedModule],
   controllers: [TenantController],
-  providers: [...USE_CASES],
-  exports: [...USE_CASES],
+  providers: [
+    CreateTenant,
+    GetTenant,
+    UpdateTenant,
+    DeleteTenant,
+    GetTenants,
+    featureFlagsService,
+    GetDeletedTenants,
+    SoftDeleteTenant,
+    RestoreTenant,
+  ],
+  exports: [GetDeletedTenants],
 })
 export class TenantModule {}

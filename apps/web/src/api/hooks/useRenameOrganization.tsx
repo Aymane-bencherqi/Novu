@@ -1,4 +1,4 @@
-import { errorMessage } from '@novu/design-system';
+import { errorMessage } from '@novu/novui';
 import type { IResponseError } from '@novu/shared';
 import { useMutation, UseMutationOptions, useQueryClient } from '@tanstack/react-query';
 

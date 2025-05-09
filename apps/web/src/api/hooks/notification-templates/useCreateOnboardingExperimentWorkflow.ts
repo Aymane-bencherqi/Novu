@@ -50,7 +50,10 @@ export const useCreateOnboardingExperimentWorkflow = () => {
     },
   });
 
-  const { templates = [], loading: templatesLoading } = useTemplates(FIRST_100_WORKFLOWS);
+  const { templates = [], loading: templatesLoading } = useTemplates({
+    ...FIRST_100_WORKFLOWS,
+    areSearchParamsEnabled: false,
+  });
 
   const { integrations, loading: isIntegrationsLoading } = useIntegrations();
 

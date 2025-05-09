@@ -27,7 +27,10 @@ export const useCreateDigestDemoWorkflow = () => {
       errorMessage('Failed to create Digest Workflow');
     },
   });
-  const { templates = [], loading: templatesLoading } = useTemplates(FIRST_100_WORKFLOWS);
+  const { templates = [], loading: templatesLoading } = useTemplates({
+    ...FIRST_100_WORKFLOWS,
+    areSearchParamsEnabled: false,
+  });
   const digestOnboardingTemplate = 'Digest Workflow Example';
 
   const createDigestDemoWorkflow = useCallback(() => {

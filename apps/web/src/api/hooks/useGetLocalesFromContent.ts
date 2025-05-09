@@ -1,4 +1,4 @@
-import { errorMessage } from '@novu/design-system';
+import { errorMessage } from '@novu/novui';
 import type { IResponseError, IEmailBlock } from '@novu/shared';
 import { useMutation } from '@tanstack/react-query';
 import { useCallback } from 'react';

@@ -30,7 +30,7 @@ services:
       - 27017:27017
 
   api:
-    image: 'ghcr.io/novuhq/novu/api:2.1.1'
+    image: 'ghcr.io/novuhq/novu/api:2.3.0'
     depends_on:
       - mongodb
       - redis

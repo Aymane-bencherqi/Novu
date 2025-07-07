@@ -11,7 +11,7 @@ services:
         max-file: '5'
 
   mongodb:
-    image: mongo:8.0.3
+    image: mongo:8.0.11
     container_name: mongodb
     restart: unless-stopped
     logging:

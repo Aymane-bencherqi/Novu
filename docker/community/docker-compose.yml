@@ -111,7 +111,7 @@ services:
       MULTICAST_QUEUE_CHUNK_SIZE: ${MULTICAST_QUEUE_CHUNK_SIZE}
 
   ws:
-    image: 'ghcr.io/novuhq/novu/ws:2.1.1'
+    image: 'ghcr.io/novuhq/novu/ws:3.12.0'
     depends_on:
       - mongodb
       - redis
